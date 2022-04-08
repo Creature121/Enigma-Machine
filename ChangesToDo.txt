@@ -1,0 +1,11 @@
+Fix PlugBoard [Done]
+
+Allow user to add lowers and space [Done]
+change lower to upper [Done]
+replace space with special character [Done]
+
+change input TextField to TextArea [Ignored; just made textLabel bigger]
+Make input and output bigger [Done(?)]
+Save and store the current settings [Ignored; loses the essence of Enigma Machine]
+Change "Encrypt" to something else [Done]
+change Plugboard Setting Label to TextArea [Ignored; just made label bigger]

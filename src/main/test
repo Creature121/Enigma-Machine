@@ -1,0 +1,46 @@
+M00850502
+Milan Varughese
+
+(1) Specify in detail describing the programming concepts and structures you used
+in your program. Give examples from  your project to illustrate this.
+Here are few of the programming concepts that I have implemented in my main project:
+
+Object Oriented Programming:
+In my EnigmaMachine project, I separated the components of an Enigma Machine into rotors (EnigmaRotor), a reflector (EnigmaReflector) and a plugBoard (EnigmaPlugBoard), turning each of them into their own dedicated class.
+
+Then I made an EnigmaMachine class that used all these three classes in it's function, which I finally used to actually encrypt messages.
+Through this, I have implemented Object Oriented Programming
+
+Polymorphism:
+I have implemented polymorphism, by overriding my own functions in my class definitions, as shown below:
+(As the screen shots I'm taking is looking weird and unclear in the report, I will write here the line numbers of the specific in which I implemented polymorphism)
+EnigmaRotor.java (47-55) (57-65) (67-75)
+
+GUI Programming:
+I built a custom user-interface for a user to effectively interact and use the Enigma machine, instead of just using the console.
+
+
+I used JavaFX and SceneBuilder to build this GUI interface. I would say like 85% of the work in this project was ensuring this UI connected properly with the EnigmaMachine code, and was working as intended.
+
+2. Provide clear details of what you started off to do in
+your project and the problems faced in implementing as
+you progressed.
+ My plan when I started, was just a simple UI interface for a digital Enigma Machine.
+It was to have many options, as given below:
+⦁	allow the user to select up to 5 of rotors at the same time.
+⦁	implement all the settings that a real life Enigma Machine would possess.
+⦁	make the UI settings change as the application encrypted/decrypted messages (as it would in a real Enigma Machine).
+⦁	and, at the very least, make it easy to use.
+I am happy to say that I have implemented most of my ideas, except of the user-selected number of rotors, because I was unable to properly generate the UI components necessary for each individual rotor on the user interface in a neat and sane way. So I had to settle for 3 rotors (thus, emulating the Enigma M3 machine).
+One of the many problems I faced throughout my project was my understanding of the Enigma Machine itself. The machine was quite complex in nature, so I had to spent an incredible amount of time on researching and understanding this machine. I even had to ask my parents to help me in understanding this machine, since I was unable to comprehend the underlying concepts of this fascinating machine. Even now, I am still confused on how exactly this machine is able to implement its complex algorithm through pure electronics.
+The other major problem I faced was building the GUI. While I was able to understand the classes we had on it, that understanding was not enough for the scale of my project, and what I wanted to do with it. I once had to start from scratch once, as I was unhappy with how it was turning out. A lot of time was spent just trying out tutorials on JavaFX, and what components I could use, and how exactly to use and place them on the screen.
+
+3. How the problems were resolved. What changes did you make in your project.
+Well, I resolved those problems by spending time researching on the internet, and getting familiar with the concept of the Enigma Machine, as well as the intricacies of JavaFX.
+The most recent changes I did in my project was improving the text input process. Instead of just forcing the user to input only uppercase letters, I now allowed the user to type whatever they want into the input text box (even copy-paste text!), and the application will automatically format the user input to the required format.
+
+4. Reflection on the project work done and how you could improve it. What other concepts could you add to enhance your project.
+Overall, the project came out quite nicely. However, the entire process of building this project could have been smoother have I planned better in the beginning. But, all in all, the application came out great.
+To improve the project, I could perhaps add a File I/O option to the app, where instead of typing out all the the text in the text input, you could just point the app to a text file to be encrypted/decrypted, and get an encrypted/decrypted file back.
+
+Provide a flowchart to show the structure and navigation of your project.

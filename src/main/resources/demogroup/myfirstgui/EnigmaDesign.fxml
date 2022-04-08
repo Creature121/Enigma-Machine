@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="demogroup.myfirstgui.EnigmaController">
+   <VBox fx:id="mainScene" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+      <StackPane.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </StackPane.margin>
+      <AnchorPane prefHeight="130.0" prefWidth="580.0">
+         <Label layoutX="125.0" layoutY="35.0" text="Enigma Machine">
+            <font>
+               <Font size="40.0" />
+            </font>
+         </Label>
+         <Button layoutX="494.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToSettings" text="Settings" />
+      </AnchorPane>
+      <VBox alignment="CENTER" prefHeight="190.0" prefWidth="580.0">
+         <HBox alignment="CENTER" prefHeight="80.0" prefWidth="580.0">
+            <Label fx:id="leftRotorTypeLabel" alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="middleRotorTypeLabel" alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="rightRotorTypeLabel" alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+         </HBox>
+         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+            <VBox.margin>
+               <Insets bottom="5.0" top="5.0" />
+            </VBox.margin>
+            <Label fx:id="leftRotorWindowLabel" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-style: solid; -fx-border-width: 3;">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="middleRotorWindowLabel" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-style: solid; -fx-border-width: 3;">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="rightRotorWindowLabel" alignment="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: white; -fx-border-style: solid; -fx-border-width: 3;">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
+            <Label fx:id="leftRotorRingSettingLabel" alignment="TOP_CENTER" prefHeight="50.0" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="middleRotorRingSettingLabel" alignment="TOP_CENTER" prefHeight="50.0" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="rightRotorRingSettingLabel" alignment="TOP_CENTER" prefHeight="50.0" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+         </HBox>
+      </VBox>
+      <AnchorPane prefHeight="200.0" prefWidth="580.0">
+         <Label layoutX="14.0" layoutY="14.0" text="Input:">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <TextField fx:id="inputTextField" layoutX="8.0" layoutY="39.0" prefHeight="40.0" prefWidth="400.0" />
+         <Label layoutX="11.0" layoutY="77.0" text="Output:">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <TextField fx:id="outputTextField" editable="false" layoutX="9.0" layoutY="102.0" prefHeight="40.0" prefWidth="400.0" />
+         <Button layoutX="447.0" layoutY="65.0" mnemonicParsing="false" onAction="#encrypt" prefHeight="40.0" prefWidth="100.0" text="Transform" />
+      </AnchorPane>
+   </VBox>
+   <TabPane fx:id="settingsScene" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" visible="false">
+      <Tab text="Rotor Settings">
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <GridPane layoutX="115.0" layoutY="86.0" prefHeight="331.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <Label text="Left Rotor Type:" />
+                  <Label text="Left Rotor Starting Position:" />
+                  <Label text="Left Rotor Ring Setting:" />
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                  <Label text="Middle Rotor Type:" />
+                  <Label text="Middle Rotor Starting Position:" />
+                  <Label text="Middle Rotor Ring Setting:" />
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                  <Label text="Right Rotor Type" />
+                  <Label text="Right Rotor Starting Position:" />
+                  <Label text="Right Rotor Ring Setting:" />
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                  <ComboBox fx:id="leftRotorTypeComboBox" onHiding="#leftRotorTypeCheck" onShowing="#rememberType" prefWidth="150.0" />
+                  <ComboBox fx:id="leftRotorStartPositionComboBox" prefWidth="150.0" />
+                  <ComboBox fx:id="leftRotorRingSettingComboBox" prefWidth="150.0" />
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ComboBox fx:id="middleRotorTypeComboBox" onHiding="#middleRotorTypeCheck" onShowing="#rememberType" prefWidth="150.0" />
+                  <ComboBox fx:id="middleRotorStartPositionComboBox" prefWidth="150.0" />
+                  <ComboBox fx:id="middleRotorRingSettingComboBox" prefWidth="150.0" />
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <ComboBox fx:id="rightRotorTypeComboBox" onHiding="#rightRotorTypeCheck" onShowing="#rememberType" prefWidth="150.0" />
+                  <ComboBox fx:id="rightRotorStartPositionComboBox" prefWidth="150.0" />
+                  <ComboBox fx:id="rightRotorRingSettingComboBox" prefWidth="150.0" />
+               </VBox>
+            </GridPane>
+         </AnchorPane>
+      </Tab>
+      <Tab text="Plugboard Settings">
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <VBox alignment="CENTER" layoutX="160.0" layoutY="65.0" prefHeight="369.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <Label fx:id="plugBoardLabel" alignment="CENTER" prefHeight="80.0" prefWidth="580.0" style="-fx-border-style: solid; -fx-border-width: 3; -fx-background-color: white;" wrapText="true">
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="A">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="B">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="C">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="D">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="E">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="F">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="G">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="H">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="I">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="J">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="K">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="L">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="M">
+                     <HBox.margin>
+                        <Insets left="4.0" right="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="N">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="O">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="P">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="Q">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="R">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="S">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="T">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="U">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="V">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="W">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="X">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="Y">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnClick" style="-fx-background-color: silver; -fx-border-style: dotted; -fx-border-width: 2;" text="Z">
+                     <HBox.margin>
+                        <Insets left="3.3" right="3.3" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0">
+                  <Button fx:id="plugBtn" mnemonicParsing="false" onAction="#plugLetters" text="Plug">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="unPlugBtn" mnemonicParsing="false" onAction="#unPlugLetters" text="Unplug">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </HBox>
+            </VBox>
+         </AnchorPane>
+      </Tab>
+      <Tab text="Reflector Settings">
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <GridPane layoutX="200.0" layoutY="140.0" prefHeight="369.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <Label text="Reflector Type:" GridPane.halignment="CENTER" />
+               <ComboBox fx:id="reflectorTypeComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            </GridPane>
+         </AnchorPane>
+      </Tab>
+      <Tab onSelectionChanged="#goToMain" text="Return" />
+   </TabPane>
+</StackPane>
